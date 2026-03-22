@@ -1,4 +1,4 @@
-/* Galerie projets + one-pagers pitch — partagé par projets.html et projets/*.html */
+/* Galerie projets + one-pagers pitch, partagé par projets.html et projets/*.html */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap');
 
 :root {
@@ -19,7 +19,7 @@
   padding: 0;
 }
 
-/* ——— Hub (projets.html) ——— */
+/* Hub (projets.html) */
 body.hub-page {
   min-height: 100vh;
   font-family: 'Inter', system-ui, sans-serif;
@@ -117,15 +117,9 @@ body.hub-page {
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
   letter-spacing: 0.02em;
-  margin-bottom: 10px;
+  text-align: center;
+  margin: 0 0 36px;
   color: #fff;
-}
-
-.hub-intro {
-  color: var(--hub-muted);
-  max-width: 640px;
-  margin-bottom: 40px;
-  font-size: 1.05rem;
 }
 
 .project-grid {
@@ -175,43 +169,136 @@ body.hub-page {
   padding: 18px 20px 22px;
 }
 
-.project-card-type {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--hub-accent);
-  margin-bottom: 8px;
-}
-
 .project-card-title {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.35rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 8px;
+  margin: 0 0 6px;
   line-height: 1.25;
 }
 
+/* Genre et durée, sous le titre */
+.project-card-meta {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--hub-accent);
+  line-height: 1.4;
+}
+
 .project-card-logline {
+  margin: 0;
   font-size: 14px;
   color: var(--hub-muted);
-  line-height: 1.45;
+  line-height: 1.5;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-.hub-note {
-  margin-top: 48px;
-  padding: 16px 20px;
-  border-radius: 10px;
-  border: 1px dashed rgba(212, 175, 122, 0.4);
-  color: var(--hub-muted);
+/* Modale mot de passe, accès vignettes projets */
+.projets-gate {
+  max-width: 420px;
+  width: calc(100vw - 32px);
+  padding: 0;
+  border: 1px solid var(--hub-border);
+  border-radius: 14px;
+  background: linear-gradient(165deg, #141a28 0%, #1a1528 100%);
+  color: var(--hub-text);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.55);
+}
+
+.projets-gate::backdrop {
+  background: rgba(6, 8, 14, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.projets-gate-form {
+  padding: 24px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.projets-gate-form h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.projets-gate-form > p:first-of-type {
   font-size: 14px;
-  max-width: 720px;
+  color: var(--hub-muted);
+  line-height: 1.45;
+}
+
+.projets-gate-form input[type='password'] {
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--hub-border);
+  background: rgba(255, 248, 237, 0.08);
+  color: var(--hub-text);
+}
+
+.projets-gate-form input[type='password']:focus {
+  outline: 2px solid var(--hub-accent);
+  outline-offset: 2px;
+}
+
+.projets-gate-error {
+  margin: -4px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f87171;
+  min-height: 1.25em;
+}
+
+.projets-gate-error:empty {
+  min-height: 0;
+  margin: 0;
+}
+
+.projets-gate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.projets-gate-actions button {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid var(--hub-border);
+  background: transparent;
+  color: var(--hub-muted);
+}
+
+.projets-gate-actions button[type='submit'] {
+  background: var(--hub-accent);
+  border-color: var(--hub-accent);
+  color: #1a1208;
+}
+
+.projets-gate-actions button:hover {
+  filter: brightness(1.08);
+}
+
+.projets-gate-actions button:focus-visible {
+  outline: 2px solid var(--hub-accent);
+  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -254,7 +341,60 @@ body.hub-page {
   background: radial-gradient(circle at 50% 80%, rgba(251, 146, 60, 0.3), transparent 50%);
 }
 
-/* ——— One-pager pitch ——— */
+/* Vignette galerie : image plein cadre (fond = celle de l’image) */
+.thumb-proj-cover {
+  display: block;
+  padding: 0;
+  background: #0a0e18;
+  overflow: hidden;
+}
+
+.thumb-proj-cover:not(.thumb-proj-cover--orange)::after {
+  display: none;
+}
+
+.thumb-proj-cover-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Meurtres à Cahors : titre en bas à droite, ancrage bas-droite + léger surélévation pour éviter le crop du titre */
+.thumb-proj-cover.thumb-proj-meurtres .thumb-proj-cover-img {
+  object-position: 92% 78%;
+  transform: translateY(-5.5%);
+}
+
+/* Rose Bertin : visuel centré sur fond corail (comme la couverture PPT) */
+.thumb-proj-cover--orange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f15625;
+  padding: 10px 12px 14px;
+}
+
+.thumb-proj-cover--orange .thumb-proj-cover-img {
+  position: relative;
+  inset: auto;
+  width: auto;
+  height: auto;
+  max-width: 68%;
+  max-height: 88%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.22));
+}
+
+.thumb-proj-cover--orange::after {
+  display: none;
+}
+
+/* One-pager pitch */
 body.pitch-page {
   min-height: 100vh;
   font-family: 'Inter', system-ui, sans-serif;
@@ -428,6 +568,400 @@ body.pitch-page {
   --pitch-gradient: linear-gradient(145deg, #1e1b4b 0%, #312e81 35%, #020617 100%);
   --pitch-glow: radial-gradient(ellipse 90% 55% at 40% -5%, rgba(196, 181, 253, 0.4), transparent 55%);
   --pitch-accent: #d4af7a;
+}
+
+/* Rose Bertin, indigo + corail (couleurs bible PPTX) */
+.pitch-theme-rose {
+  --pitch-gradient: linear-gradient(155deg, #2d3a7a 0%, #4a5ba8 32%, #7c2d12 78%, #1a0f0d 100%);
+  --pitch-glow: radial-gradient(ellipse 85% 50% at 15% 20%, rgba(241, 86, 37, 0.35), transparent 50%),
+    radial-gradient(ellipse 60% 45% at 85% 10%, rgba(147, 163, 250, 0.25), transparent 55%);
+  --pitch-accent: #f3ecd4;
+}
+
+/* Bibles / dossiers : plein écran type diapo PPT, texte centré */
+body.pitch-page-bertin {
+  /* défaut = Rose Bertin */
+  --bertin-cover-bg: #f15625;
+  --bertin-cover-title: #f3ecd4;
+  --bertin-cover-sub: #221f1f;
+  --bertin-cover-format: #f3ecd4;
+  --bertin-art-border: rgba(34, 31, 31, 0.18);
+  --bertin-art-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
+  --bertin-footer-bg: rgba(0, 0, 0, 0.07);
+  --bertin-footer-fg: #221f1f;
+  --bertin-footer-border: rgba(34, 31, 31, 0.14);
+  --bertin-logline-bg: #f3ecd4;
+  --bertin-logline-label: #4a5ba8;
+  --bertin-logline-text: #221f1f;
+  --bertin-context-bg: #4a5ba8;
+  --bertin-context-title: #f4eed6;
+  --bertin-context-p: #ffffff;
+
+  font-family: Calibri, 'Segoe UI', 'Inter', system-ui, sans-serif;
+  color: #221f1f;
+  line-height: 1.6;
+  font-size: 18px;
+  background: var(--bertin-cover-bg);
+  margin: 0;
+  min-height: 100vh;
+}
+
+.pitch-page-bertin .bertin-wrap {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.pitch-page-bertin .bertin-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 18px 24px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.pitch-page-bertin .bertin-nav a {
+  pointer-events: auto;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #f4eed6;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(34, 31, 31, 0.55);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.pitch-page-bertin .bertin-nav a:hover {
+  background: rgba(34, 31, 31, 0.75);
+}
+
+.pitch-page-bertin .bertin-nav a:focus-visible {
+  outline: 3px solid #f3ecd4;
+  outline-offset: 4px;
+}
+
+/* Chaque bloc = une « diapo » hauteur viewport (minimum) */
+.pitch-page-bertin .bertin-slide {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.pitch-page-bertin .bertin-slide-fill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px clamp(20px, 4vw, 48px) 32px;
+}
+
+.pitch-page-bertin .bertin-slide-fill--context {
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 48px;
+}
+
+.pitch-page-bertin .bertin-slide-center {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.pitch-page-bertin .bertin-slide-center--narrow {
+  max-width: 38rem;
+}
+
+.pitch-page-bertin .bertin-slide-center--context {
+  max-width: 46rem;
+}
+
+.pitch-page-bertin .bertin-slide--cover {
+  background: var(--bertin-cover-bg);
+}
+
+/* Visuel au-dessus du titre (extrait de la couverture PPTX) */
+.pitch-page-bertin .bertin-cover-art {
+  margin: 0 auto 1.35rem;
+  max-width: min(420px, 78vw);
+  line-height: 0;
+}
+
+.pitch-page-bertin .bertin-cover-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid var(--bertin-art-border);
+  box-shadow: var(--bertin-art-shadow);
+}
+
+.pitch-page-bertin .bertin-slide--logline {
+  background: var(--bertin-logline-bg);
+  color: var(--bertin-logline-text);
+}
+
+.pitch-page-bertin .bertin-slide--context {
+  background: var(--bertin-context-bg);
+  color: var(--bertin-context-p);
+}
+
+.pitch-page-bertin .bertin-cover-title {
+  font-family: Verdana, Geneva, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 8vw, 4.25rem);
+  color: var(--bertin-cover-title);
+  line-height: 1.1;
+  margin: 0 0 0.35em;
+  letter-spacing: -0.02em;
+}
+
+.pitch-page-bertin .bertin-cover-sub {
+  font-family: Verdana, Geneva, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 3.5vw, 1.9rem);
+  color: var(--bertin-cover-sub);
+  margin: 0 0 1em;
+  line-height: 1.35;
+}
+
+.pitch-page-bertin .bertin-cover-format {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.95rem, 2.2vw, 1.12rem);
+  color: var(--bertin-cover-format);
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.pitch-page-bertin .bertin-slide-footer {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 14px clamp(16px, 3vw, 28px) 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(11px, 2.2vw, 13px);
+  line-height: 1.45;
+  color: var(--bertin-footer-fg);
+  background: var(--bertin-footer-bg);
+  border-top: 1px solid var(--bertin-footer-border);
+}
+
+.pitch-page-bertin .bertin-slide-footer-strong {
+  font-weight: 700;
+}
+
+.pitch-page-bertin .bertin-slide-footer-sep {
+  opacity: 0.65;
+}
+
+.pitch-page-bertin .bertin-logline-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bertin-logline-label);
+  margin: 0 0 1.25em;
+}
+
+.pitch-page-bertin .bertin-logline-text {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  line-height: 1.65;
+  text-align: center;
+  color: var(--bertin-logline-text);
+}
+
+.pitch-page-bertin .bertin-logline-text em {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.pitch-page-bertin .bertin-context-title {
+  font-family: Verdana, Geneva, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  color: var(--bertin-context-title);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  margin: 0 0 1.25em;
+}
+
+.pitch-page-bertin .bertin-context-body {
+  font-family: Calibri, 'Segoe UI', 'Inter', sans-serif;
+  font-size: clamp(0.98rem, 2.1vw, 1.15rem);
+  line-height: 1.75;
+  text-align: center;
+}
+
+.pitch-page-bertin .bertin-context-body p {
+  margin: 0 0 1.25em;
+  color: var(--bertin-context-p);
+}
+
+.pitch-page-bertin .bertin-context-body p:last-child {
+  margin-bottom: 0;
+}
+
+body.pitch-page-bertin.bertin-theme-modulor {
+  --bertin-cover-bg: #091944;
+  --bertin-cover-title: #e8edf5;
+  --bertin-cover-sub: #93c5fd;
+  --bertin-cover-format: #cbd5e1;
+  --bertin-art-border: rgba(255, 255, 255, 0.22);
+  --bertin-art-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --bertin-footer-bg: rgba(0, 0, 0, 0.28);
+  --bertin-footer-fg: #e2e8f0;
+  --bertin-footer-border: rgba(255, 255, 255, 0.12);
+  --bertin-logline-bg: #0c2244;
+  --bertin-logline-label: #38bdf8;
+  --bertin-logline-text: #e2e8f0;
+  --bertin-context-bg: #082048;
+  --bertin-context-title: #f0d9a8;
+  --bertin-context-p: #f1f5f9;
+}
+
+body.pitch-page-bertin.bertin-theme-faia {
+  /* Fond page : tricolore (bleu · blanc · rouge) */
+  --faia-flag: linear-gradient(
+    90deg,
+    #0055a4 0%,
+    #0055a4 33.333%,
+    #ffffff 33.333%,
+    #ffffff 66.666%,
+    #e1000f 66.666%,
+    #e1000f 100%
+  );
+  --bertin-cover-bg: #0055a4;
+  --bertin-cover-title: #1e3a5f;
+  --bertin-cover-sub: #0f172a;
+  --bertin-cover-format: #334155;
+  --bertin-art-border: rgba(15, 23, 42, 0.12);
+  --bertin-art-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+  --bertin-footer-bg: rgba(255, 255, 255, 0.92);
+  --bertin-footer-fg: #0f172a;
+  --bertin-footer-border: rgba(15, 23, 42, 0.12);
+  --bertin-logline-bg: #fffbeb;
+  --bertin-logline-label: #b45309;
+  --bertin-logline-text: #292524;
+  --bertin-context-bg: #d97706;
+  --bertin-context-title: #fffbeb;
+  --bertin-context-p: #fff7ed;
+  background: var(--faia-flag);
+}
+
+body.pitch-page-bertin.bertin-theme-faia .bertin-slide--cover {
+  background: var(--faia-flag);
+}
+
+/* Texte + visuel lisibles sur le tricolore */
+body.pitch-page-bertin.bertin-theme-faia .bertin-slide--cover .bertin-slide-center {
+  background: rgba(255, 255, 255, 0.94);
+  padding: clamp(1.25rem, 4vw, 2rem) clamp(1.1rem, 3vw, 1.75rem);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Vignette galerie « Maire courage » : drapeau + buste de Marianne centré, plus gros (zoom) */
+.thumb-proj-cover.thumb-proj-faia {
+  display: block;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #0055a4 0%,
+    #0055a4 33.333%,
+    #ffffff 33.333%,
+    #ffffff 66.666%,
+    #e1000f 66.666%,
+    #e1000f 100%
+  );
+}
+
+.thumb-proj-cover.thumb-proj-faia::after {
+  display: none;
+}
+
+.thumb-proj-cover.thumb-proj-faia .thumb-proj-cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  /* Point de mise au point sur le buste (haut-centre de l’affiche) */
+  object-position: center 18%;
+  transform: scale(1.32);
+  transform-origin: center 22%;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+}
+
+body.pitch-page-bertin.bertin-theme-ropes {
+  --bertin-cover-bg: #1a0a12;
+  --bertin-cover-title: #fecdd3;
+  --bertin-cover-sub: #fda4af;
+  --bertin-cover-format: #fce7f3;
+  --bertin-art-border: rgba(251, 113, 133, 0.35);
+  --bertin-art-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
+  --bertin-footer-bg: rgba(0, 0, 0, 0.35);
+  --bertin-footer-fg: #fce7f3;
+  --bertin-footer-border: rgba(251, 113, 133, 0.22);
+  --bertin-logline-bg: #2d1522;
+  --bertin-logline-label: #fb7185;
+  --bertin-logline-text: #fdf2f8;
+  --bertin-context-bg: #4a0d1f;
+  --bertin-context-title: #ffe4e6;
+  --bertin-context-p: #fff1f2;
+}
+
+body.pitch-page-bertin.bertin-theme-meurtres {
+  --bertin-cover-bg: #1e293b;
+  --bertin-cover-title: #f1f5f9;
+  --bertin-cover-sub: #94a3b8;
+  --bertin-cover-format: #cbd5e1;
+  --bertin-art-border: rgba(148, 163, 184, 0.35);
+  --bertin-art-shadow: 0 14px 32px rgba(0, 0, 0, 0.4);
+  --bertin-footer-bg: rgba(0, 0, 0, 0.28);
+  --bertin-footer-fg: #e2e8f0;
+  --bertin-footer-border: rgba(148, 163, 184, 0.22);
+  --bertin-logline-bg: #334155;
+  --bertin-logline-label: #7dd3fc;
+  --bertin-logline-text: #f8fafc;
+  --bertin-context-bg: #0f172a;
+  --bertin-context-title: #fde68a;
+  --bertin-context-p: #e2e8f0;
+}
+
+body.pitch-page-bertin.bertin-theme-elisabeth {
+  --bertin-cover-bg: #422006;
+  --bertin-cover-title: #fef3c7;
+  --bertin-cover-sub: #fcd34d;
+  --bertin-cover-format: #fde68a;
+  --bertin-art-border: rgba(254, 243, 199, 0.28);
+  --bertin-art-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --bertin-footer-bg: rgba(0, 0, 0, 0.32);
+  --bertin-footer-fg: #fef3c7;
+  --bertin-footer-border: rgba(252, 211, 77, 0.28);
+  --bertin-logline-bg: #78350f;
+  --bertin-logline-label: #fde68a;
+  --bertin-logline-text: #fffbeb;
+  --bertin-context-bg: #292524;
+  --bertin-context-title: #fbbf24;
+  --bertin-context-p: #e7e5e4;
 }
 
 @media (prefers-reduced-motion: reduce) {

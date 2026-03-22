@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Yohann Ghellis — narrative designer, game designer et scénariste. Expériences jeu vidéo, téléfilm et courts-métrages. Portfolio bilingue FR/EN." />
+  <meta name="description" content="Yohann Ghellis, narrative designer, game designer et scénariste. Expériences jeu vidéo, téléfilm et courts-métrages. Portfolio bilingue FR/EN." />
   <meta name="theme-color" content="#87ceeb" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Yohann Ghellis — Portfolio" />
-  <meta property="og:description" content="Narrative designer, game designer et scénariste — jeux vidéo, fiction TV et courts formats." />
+  <meta property="og:title" content="Yohann Ghellis, Portfolio" />
+  <meta property="og:description" content="Narrative designer, game designer et scénariste, jeux vidéo, fiction TV et courts formats." />
   <meta property="og:locale" content="fr_FR" />
   <meta name="twitter:card" content="summary_large_image" />
-  <title>Yohann Ghellis — Portfolio (narrative &amp; game design)</title>
+  <title>Yohann Ghellis, Portfolio (narrative &amp; game design)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@600;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
@@ -109,10 +109,11 @@
     :focus-visible{outline:3px solid var(--secondary);outline-offset:2px}
     .tab:focus-visible,.lang-btn:focus-visible,.social-link:focus-visible,button[type='submit']:focus-visible{outline-offset:4px}
     @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}body{transition:none!important}}
-    .hub-link-wrap{margin-top:14px;margin-bottom:4px}
+    .projets-link-row{display:flex;justify-content:center;margin:0 0 20px}
     .hub-link{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:3px solid var(--line);background:linear-gradient(135deg,#4338ca,#6366f1);color:#fff!important;text-decoration:none;box-shadow:4px 4px 0 #000;font-size:11px;font-family:'Press Start 2P',cursive;line-height:1.4;border-bottom:none!important;max-width:100%}
     .hub-link:hover{filter:brightness(1.07);color:#fff!important}
-    body.screen-mode .hub-link{font-family:'Inter',sans-serif;font-weight:700;font-size:14px;border-radius:8px;border-width:1px;box-shadow:0 8px 20px rgba(0,0,0,.22)}
+    body.screen-mode .hub-link{font-family:'Inter',sans-serif;font-weight:700;font-size:14px;border-radius:8px;border:1px solid #7a5c10;background:linear-gradient(145deg,#c9a227 0%,#e8c547 45%,#f0d060 100%);color:#1f1608!important;text-shadow:0 1px 0 rgba(255,248,220,.45);box-shadow:0 6px 18px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.35)}
+    body.screen-mode .hub-link:hover{filter:brightness(1.06);color:#120d04!important;box-shadow:0 8px 22px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.45)}
   </style>
 </head>
 <body>
@@ -130,7 +131,6 @@
         <div>
           <h1 id="main-title">YOHANN GHELLIS</h1>
           <p class="subtitle" id="main-subtitle">NARRATIVE DESIGNER · GAME DESIGNER · SCENARISTE</p>
-          <p class="hub-link-wrap"><a class="hub-link" href="projets.html" data-i18n="nav_projets">Projets &amp; one-pagers</a></p>
           <div class="contact">
             <a href="mailto:ghellis.yohann@gmail.com">ghellis.yohann@gmail.com</a>
             <span>+33 7 85 90 59 16</span>
@@ -157,6 +157,9 @@
     <div class="tabs" role="tablist" aria-label="Choisir le profil" id="profile-tabs">
       <button type="button" role="tab" id="tab-game" class="tab active" aria-selected="true" aria-controls="game" data-target="game" data-i18n="tab_game">PROFIL NARRATIVE / GAME DESIGNER</button>
       <button type="button" role="tab" id="tab-screen" class="tab" aria-selected="false" aria-controls="screen" data-target="screen" data-i18n="tab_screen">PROFIL SCENARISTE</button>
+    </div>
+    <div class="projets-link-row">
+      <a class="hub-link" href="projets.html" data-i18n="nav_projets">Projets</a>
     </div>
 
     <div class="layout">
@@ -267,7 +270,7 @@
         a4_label:'Sélection', a4_title:'Poker Battle (VR/360°)', a4_text:'Sélection au Festival 360 Film (Satis-Screen4all).',
         contact:'FORMULAIRE DE CONTACT', name:'NOM', email:'EMAIL', msg:'MESSAGE', send:'ENVOYER', contact_note:'Le formulaire ouvre votre client email pour l\'envoi.',
         langLine:'Français · Anglais (B2)', scenHeader:'SCENARISTE', defaultHeader:'NARRATIVE DESIGNER · GAME DESIGNER · SCENARISTE',
-        nav_projets:'Projets &amp; one-pagers'
+        nav_projets:'Projets'
       },
       en: {
         skip:'Skip to content', agent_name:'Catherine Davray', tabsLabel:'Choose profile',
@@ -284,7 +287,7 @@
         a4_label:'Selection', a4_title:'Poker Battle (VR/360°)', a4_text:'Selected for the 360 Film Festival (Satis-Screen4all).',
         contact:'CONTACT FORM', name:'NAME', email:'EMAIL', msg:'MESSAGE', send:'SEND', contact_note:'The form opens your email client to send the message.',
         langLine:'French · English (B2)', scenHeader:'SCREENWRITER', defaultHeader:'NARRATIVE DESIGNER · GAME DESIGNER · SCREENWRITER',
-        nav_projets:'Projects &amp; one-pagers'
+        nav_projets:'Projects'
       }
     };
 
