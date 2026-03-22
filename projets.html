@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projets de séries et films — one-pagers avec logline et pitch. Yohann Ghellis." />
+  <title>Projets &amp; one-pagers — Yohann Ghellis</title>
+  <link rel="stylesheet" href="assets/pitch-onepager.css" />
+</head>
+<body class="hub-page">
+  <div class="hub-wrap">
+    <header class="hub-top">
+      <a class="hub-back" href="index.html" data-i18n-hub="back">← Portfolio</a>
+      <div class="hub-lang" role="group" aria-label="Langue">
+        <button type="button" class="active" data-hub-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-hub-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </header>
+
+    <h1 class="hub-title" data-i18n-hub="hub_title">Projets &amp; one-pagers</h1>
+    <p class="hub-intro" data-i18n-hub="hub_intro">
+      Sélection de concepts de séries et de films : chaque carte mène à une page dédiée (fond cinéma, logline, pitch). Les textes ci-dessous sont des exemples — ils seront remplacés lorsque tes vrais one-pagers seront intégrés.
+    </p>
+
+    <main>
+      <div class="project-grid">
+        <a class="project-card" href="projets/archives-qui-mentent.html">
+          <div class="project-card-thumb thumb-violet"></div>
+          <div class="project-card-body">
+            <span class="project-card-type" data-i18n-hub="type_series">Série</span>
+            <h2 class="project-card-title" data-i18n-hub="card1_title">Les archives qui mentent</h2>
+            <p class="project-card-logline" data-i18n-hub="card1_log">
+              Une archiviste judiciaire découvre que des dossiers classés « sans suite » cachent une même signature — celle d’un tueur que tout le monde croyait mort depuis vingt ans.
+            </p>
+          </div>
+        </a>
+
+        <a class="project-card" href="projets/marius-et-la-maree.html">
+          <div class="project-card-thumb thumb-ocean"></div>
+          <div class="project-card-body">
+            <span class="project-card-type" data-i18n-hub="type_film">Long métrage</span>
+            <h2 class="project-card-title" data-i18n-hub="card2_title">Marius et la marée</h2>
+            <p class="project-card-logline" data-i18n-hub="card2_log">
+              Dans un port en déclin, un marin qui refuse de quitter la mer doit affronter la vente du dernier chalutier familial — et le retour d’un ancien amour devenu avocate du promoteur.
+            </p>
+          </div>
+        </a>
+
+        <a class="project-card" href="projets/ligne-de-fuite.html">
+          <div class="project-card-thumb thumb-ember"></div>
+          <div class="project-card-body">
+            <span class="project-card-type" data-i18n-hub="type_series">Série</span>
+            <h2 class="project-card-title" data-i18n-hub="card3_title">Ligne de fuite</h2>
+            <p class="project-card-logline" data-i18n-hub="card3_log">
+              Une négociatrice du RAID formée au théâtre improvise des sorties de crises comme des mises en scène — jusqu’au jour où son propre passé devient la pièce.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <p class="hub-note" data-i18n-hub="hub_note">
+        Pour ajouter un projet : duplique <code style="font-size:0.9em;opacity:0.9">projets/_TEMPLATE.html</code>, renomme le fichier, ajuste le thème (<code style="font-size:0.9em">pitch-theme-violet</code>, <code style="font-size:0.9em">ocean</code> ou <code style="font-size:0.9em">ember</code>), puis ajoute une carte sur cette page.
+      </p>
+    </main>
+  </div>
+
+  <script>
+    const hubI18n = {
+      fr: {
+        back: '← Portfolio',
+        hub_title: 'Projets &amp; one-pagers',
+        hub_intro:
+          'Sélection de concepts de séries et de films : chaque carte mène à une page dédiée (fond cinéma, logline, pitch). Les textes ci-dessous sont des exemples — ils seront remplacés lorsque tes vrais one-pagers seront intégrés.',
+        type_series: 'Série',
+        type_film: 'Long métrage',
+        card1_title: 'Les archives qui mentent',
+        card1_log:
+          'Une archiviste judiciaire découvre que des dossiers classés « sans suite » cachent une même signature — celle d’un tueur que tout le monde croyait mort depuis vingt ans.',
+        card2_title: 'Marius et la marée',
+        card2_log:
+          'Dans un port en déclin, un marin qui refuse de quitter la mer doit affronter la vente du dernier chalutier familial — et le retour d’un ancien amour devenu avocate du promoteur.',
+        card3_title: 'Ligne de fuite',
+        card3_log:
+          'Une négociatrice du RAID formée au théâtre improvise des sorties de crises comme des mises en scène — jusqu’au jour où son propre passé devient la pièce.',
+        hub_note:
+          'Pour ajouter un projet : duplique <code style="font-size:0.9em;opacity:0.9">projets/_TEMPLATE.html</code>, renomme le fichier, ajuste le thème (<code style="font-size:0.9em">pitch-theme-violet</code>, <code style="font-size:0.9em">ocean</code> ou <code style="font-size:0.9em">ember</code>), puis ajoute une carte sur cette page.',
+      },
+      en: {
+        back: '← Portfolio',
+        hub_title: 'Projects &amp; one-pagers',
+        hub_intro:
+          'A selection of series and feature concepts: each card opens a dedicated page (cinematic backdrop, logline, pitch). The copy below is placeholder sample text and will be replaced when your real one-pagers are integrated.',
+        type_series: 'Series',
+        type_film: 'Feature film',
+        card1_title: 'The Lying Archives',
+        card1_log:
+          'A judicial archivist finds that cold-case files marked “closed” share one signature — that of a killer everyone believed dead for twenty years.',
+        card2_title: 'Marius and the Tide',
+        card2_log:
+          'In a declining harbour town, a fisherman who refuses to leave the sea must fight the sale of the last family trawler — and the return of an old love now working for the developer.',
+        card3_title: 'Line of Flight',
+        card3_log:
+          'A RAID negotiator with a theatre background stages crisis outcomes like performances — until her own past becomes the play.',
+        hub_note:
+          'To add a project: duplicate <code style="font-size:0.9em;opacity:0.9">projets/_TEMPLATE.html</code>, rename the file, pick a theme class (<code style="font-size:0.9em">pitch-theme-violet</code>, <code style="font-size:0.9em">ocean</code>, or <code style="font-size:0.9em">ember</code>), then add a card on this page.',
+      },
+    };
+
+    function applyHubLang(lang) {
+      document.querySelectorAll('[data-i18n-hub]').forEach((el) => {
+        const key = el.getAttribute('data-i18n-hub');
+        if (hubI18n[lang][key] !== undefined) el.innerHTML = hubI18n[lang][key];
+      });
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-hub-lang]').forEach((btn) => {
+        const on = btn.getAttribute('data-hub-lang') === lang;
+        btn.classList.toggle('active', on);
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    }
+
+    document.querySelectorAll('[data-hub-lang]').forEach((btn) => {
+      btn.addEventListener('click', () => applyHubLang(btn.getAttribute('data-hub-lang')));
+    });
+    applyHubLang('fr');
+  </script>
+</body>
+</html>

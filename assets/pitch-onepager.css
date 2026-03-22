@@ -1,0 +1,437 @@
+/* Galerie projets + one-pagers pitch — partagé par projets.html et projets/*.html */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap');
+
+:root {
+  --hub-bg-top: #0c1222;
+  --hub-bg-bottom: #1a1528;
+  --hub-card: rgba(255, 248, 237, 0.06);
+  --hub-border: rgba(212, 175, 122, 0.35);
+  --hub-text: #f4ede4;
+  --hub-muted: rgba(244, 237, 228, 0.72);
+  --hub-accent: #d4af7a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ——— Hub (projets.html) ——— */
+body.hub-page {
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--hub-text);
+  background: linear-gradient(165deg, var(--hub-bg-top) 0%, #15101f 45%, var(--hub-bg-bottom) 100%);
+  background-attachment: fixed;
+  line-height: 1.5;
+  font-size: 17px;
+}
+
+.hub-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  background:
+    radial-gradient(ellipse 100% 80% at 50% -30%, rgba(99, 102, 241, 0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 60%, rgba(139, 21, 56, 0.12), transparent);
+  z-index: 0;
+}
+
+.hub-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 64px;
+}
+
+.hub-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--hub-border);
+}
+
+.hub-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--hub-accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.hub-back:hover {
+  border-bottom-color: var(--hub-accent);
+  color: #e8c992;
+}
+
+.hub-back:focus-visible {
+  outline: 2px solid var(--hub-accent);
+  outline-offset: 4px;
+}
+
+.hub-lang {
+  display: flex;
+  gap: 8px;
+}
+
+.hub-lang button {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--hub-border);
+  background: transparent;
+  color: var(--hub-muted);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hub-lang button.active {
+  background: rgba(212, 175, 122, 0.2);
+  color: var(--hub-text);
+  border-color: var(--hub-accent);
+}
+
+.hub-lang button:focus-visible {
+  outline: 2px solid var(--hub-accent);
+  outline-offset: 2px;
+}
+
+.hub-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.hub-intro {
+  color: var(--hub-muted);
+  max-width: 640px;
+  margin-bottom: 40px;
+  font-size: 1.05rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--hub-border);
+  background: var(--hub-card);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.45);
+  border-color: rgba(212, 175, 122, 0.55);
+}
+
+.project-card:focus-visible {
+  outline: 3px solid var(--hub-accent);
+  outline-offset: 4px;
+}
+
+.project-card-thumb {
+  aspect-ratio: 16 / 10;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12, 10, 18, 0.85), transparent 55%);
+  pointer-events: none;
+}
+
+.project-card-body {
+  padding: 18px 20px 22px;
+}
+
+.project-card-type {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hub-accent);
+  margin-bottom: 8px;
+}
+
+.project-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.project-card-logline {
+  font-size: 14px;
+  color: var(--hub-muted);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hub-note {
+  margin-top: 48px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  border: 1px dashed rgba(212, 175, 122, 0.4);
+  color: var(--hub-muted);
+  font-size: 14px;
+  max-width: 720px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+/* Thèmes de vignette (gradients) */
+.thumb-violet {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #0f172a 100%);
+}
+.thumb-violet::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 30% 40%, rgba(167, 139, 250, 0.35), transparent 50%);
+}
+
+.thumb-ocean {
+  background: linear-gradient(160deg, #0c4a6e 0%, #164e63 50%, #0f172a 100%);
+}
+.thumb-ocean::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 70% 30%, rgba(56, 189, 248, 0.25), transparent 45%);
+}
+
+.thumb-ember {
+  background: linear-gradient(145deg, #292524 0%, #431407 45%, #0c0a09 100%);
+}
+.thumb-ember::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 50% 80%, rgba(251, 146, 60, 0.3), transparent 50%);
+}
+
+/* ——— One-pager pitch ——— */
+body.pitch-page {
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #f4f0ea;
+  line-height: 1.65;
+  font-size: 18px;
+}
+
+.pitch-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: var(--pitch-gradient, linear-gradient(145deg, #1a1030 0%, #0f172a 50%, #020617 100%));
+}
+
+.pitch-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: var(--pitch-glow-opacity, 0.5);
+  background: var(
+    --pitch-glow,
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(167, 139, 250, 0.35), transparent 55%)
+  );
+}
+
+.pitch-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.pitch-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgba(2, 6, 23, 0.25) 0%, rgba(2, 6, 23, 0.75) 100%);
+  pointer-events: none;
+}
+
+.pitch-shell {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+}
+
+.pitch-nav {
+  margin-bottom: 32px;
+}
+
+.pitch-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--pitch-accent, #d4af7a);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.pitch-nav a:hover {
+  border-bottom-color: var(--pitch-accent, #d4af7a);
+}
+
+.pitch-nav a:focus-visible {
+  outline: 2px solid var(--pitch-accent, #d4af7a);
+  outline-offset: 4px;
+}
+
+.pitch-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pitch-accent, #d4af7a);
+  margin-bottom: 16px;
+  padding: 6px 12px;
+  border: 1px solid rgba(212, 175, 122, 0.45);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.pitch-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 28px;
+  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
+}
+
+.pitch-glass {
+  background: rgba(15, 15, 25, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px 26px;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.pitch-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pitch-accent, #d4af7a);
+  margin-bottom: 12px;
+}
+
+.pitch-logline {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #fff;
+}
+
+.pitch-body-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.pitch-body p {
+  margin-bottom: 1em;
+  color: rgba(244, 240, 234, 0.88);
+}
+
+.pitch-body p:last-child {
+  margin-bottom: 0;
+}
+
+.pitch-footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  color: rgba(244, 240, 234, 0.5);
+}
+
+/* Variantes de thème one-pager (override sur body) */
+.pitch-theme-ocean {
+  --pitch-gradient: linear-gradient(165deg, #0c4a6e 0%, #134e4a 40%, #020617 100%);
+  --pitch-glow: radial-gradient(ellipse 80% 50% at 70% 0%, rgba(56, 189, 248, 0.35), transparent 55%);
+  --pitch-accent: #7dd3fc;
+}
+
+.pitch-theme-ember {
+  --pitch-gradient: linear-gradient(155deg, #292524 0%, #7c2d12 42%, #0c0a09 100%);
+  --pitch-glow: radial-gradient(ellipse 70% 45% at 50% 100%, rgba(251, 113, 133, 0.22), transparent 50%);
+  --pitch-accent: #fdba74;
+}
+
+.pitch-theme-violet {
+  --pitch-gradient: linear-gradient(145deg, #1e1b4b 0%, #312e81 35%, #020617 100%);
+  --pitch-glow: radial-gradient(ellipse 90% 55% at 40% -5%, rgba(196, 181, 253, 0.4), transparent 55%);
+  --pitch-accent: #d4af7a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pitch-bg::after {
+    display: none;
+  }
+}
