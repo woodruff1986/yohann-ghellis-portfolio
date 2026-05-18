@@ -969,3 +969,246 @@ body.pitch-page-bertin.bertin-theme-elisabeth {
     display: none;
   }
 }
+
+/* ========================================
+   RESPONSIVE DESIGN - HUB & PROJECT PAGES
+   ======================================== */
+
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) {
+  .hub-wrap {
+    padding: 20px 16px 48px;
+  }
+  .hub-title {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    margin-bottom: 28px;
+  }
+  .project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .project-card-title {
+    font-size: 1.25rem;
+  }
+  .project-card-body {
+    padding: 16px 18px 20px;
+  }
+  .projets-gate-form {
+    padding: 24px;
+    min-width: auto;
+    width: 90vw;
+    max-width: 400px;
+  }
+}
+
+/* Mobile Landscape / Large Phone (480px - 767px) */
+@media (max-width: 767px) {
+  .hub-page {
+    font-size: 16px;
+  }
+  .hub-wrap {
+    padding: 16px 12px 40px;
+  }
+  .hub-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+  }
+  .hub-back {
+    font-size: 14px;
+    justify-content: center;
+  }
+  .hub-lang {
+    justify-content: center;
+  }
+  .hub-lang button {
+    font-size: 14px;
+    padding: 10px 16px;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .hub-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 24px;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .project-card {
+    border-radius: 12px;
+  }
+  .project-card-thumb {
+    aspect-ratio: 16 / 9;
+  }
+  .project-card-title {
+    font-size: 1.2rem;
+  }
+  .project-card-meta {
+    font-size: 12px;
+  }
+  .project-card-logline {
+    font-size: 13px;
+    -webkit-line-clamp: 3;
+  }
+  .project-card-body {
+    padding: 14px 16px 18px;
+  }
+
+  /* Modal password gate - mobile optimization */
+  .projets-gate::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+  }
+  .projets-gate {
+    margin: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: 100%;
+    width: 100%;
+  }
+  .projets-gate-form {
+    padding: 24px 20px;
+    min-width: auto;
+    width: calc(100vw - 32px);
+    max-width: 100%;
+    border-radius: 16px;
+  }
+  .projets-gate-form h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+  .projets-gate-form p {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .projets-gate-form input[type="password"] {
+    font-size: 16px;
+    padding: 14px 16px;
+    min-height: 48px;
+    margin-bottom: 16px;
+  }
+  .projets-gate-actions {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  .projets-gate-actions button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+  .projets-gate-error {
+    font-size: 13px;
+    min-height: 20px;
+  }
+}
+
+/* Small Mobile (max 479px) */
+@media (max-width: 479px) {
+  .hub-wrap {
+    padding: 12px 10px 32px;
+  }
+  .hub-top {
+    margin-bottom: 20px;
+  }
+  .hub-title {
+    font-size: clamp(1.35rem, 7vw, 1.75rem);
+    margin-bottom: 20px;
+  }
+  .project-card {
+    border-radius: 10px;
+  }
+  .project-card-thumb {
+    aspect-ratio: 4 / 3;
+  }
+  .project-card-title {
+    font-size: 1.15rem;
+  }
+  .project-card-meta {
+    font-size: 11px;
+  }
+  .project-card-logline {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+  .project-card-body {
+    padding: 12px 14px 16px;
+  }
+
+  /* Pitch/one-pager pages - small mobile */
+  .pitch-wrap {
+    padding: 16px 12px 40px;
+  }
+  .pitch-header {
+    margin-bottom: 16px;
+  }
+  .pitch-back {
+    font-size: 13px;
+  }
+  .pitch-sheet {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .pitch-title {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+  .pitch-meta-line {
+    font-size: 13px;
+  }
+  .pitch-logline {
+    font-size: 15px;
+  }
+  .pitch-section-title {
+    font-size: 13px;
+  }
+  .pitch-context {
+    padding: 16px;
+  }
+  .pitch-context h3 {
+    font-size: 14px;
+  }
+  .pitch-context p {
+    font-size: 14px;
+  }
+  .pitch-cta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pitch-cta a {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 14px;
+    min-height: 48px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .project-card:hover {
+    transform: none;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  }
+  .hub-back:hover {
+    border-bottom-color: transparent;
+  }
+  .pitch-back:hover {
+    opacity: 1;
+  }
+  .pitch-cta a:hover {
+    transform: none;
+  }
+}
+
+/* Reduced motion for project card */
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+  .project-card:hover {
+    transform: none;
+  }
+}
