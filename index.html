@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Yohann Ghellis, narrative designer, game designer et scénariste. Jeux vidéo, fiction TV et formats courts. Portfolio bilingue FR/EN.">
+<meta name="description" content="Yohann Ghellis, scénariste et narrative/game designer. Fiction TV, courts métrages et jeux vidéo. Portfolio bilingue FR/EN.">
 <meta name="theme-color" content="#0b0b0b">
 <meta property="og:title" content="Yohann Ghellis, Portfolio">
-<meta property="og:description" content="Narrative designer, game designer et scénariste.">
+<meta property="og:description" content="Scénariste et narrative/game designer.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <title>Yohann Ghellis Portfolio</title>
@@ -87,10 +87,10 @@ h1 .ch.b{animation:bounce .7s cubic-bezier(.3,1.6,.5,1)}
 
 /* outlined index */
 .index{border-block:2px solid var(--fg);margin-block:1rem 0}
-.index a{display:flex;align-items:baseline;gap:1rem;text-decoration:none;padding-block:.35rem;border-bottom:1px solid var(--line);color:transparent;-webkit-text-stroke:1.5px var(--fg);font-family:var(--font-display);font-weight:900;font-size:clamp(1.7rem,7.2vw,4.4rem);line-height:1.1;text-transform:uppercase;transition:color .2s,padding-left .2s;min-width:0}
+.index a{--o:var(--fg);--w:.028em;display:flex;align-items:baseline;gap:1rem;text-decoration:none;padding-block:.35rem;border-bottom:1px solid var(--line);color:var(--bg);text-shadow:calc(var(--w)*-1) 0 var(--o),var(--w) 0 var(--o),0 calc(var(--w)*-1) var(--o),0 var(--w) var(--o),calc(var(--w)*-.75) calc(var(--w)*-.75) var(--o),calc(var(--w)*.75) calc(var(--w)*-.75) var(--o),calc(var(--w)*-.75) calc(var(--w)*.75) var(--o),calc(var(--w)*.75) calc(var(--w)*.75) var(--o);font-family:var(--font-display);font-weight:900;font-size:clamp(1.7rem,7.2vw,4.4rem);line-height:1.1;text-transform:uppercase;transition:color .2s,padding-left .2s;min-width:0}
 .index a:last-child{border-bottom:0}
-.index a small{font:500 .8rem var(--font-mono);-webkit-text-stroke:0;color:var(--muted);letter-spacing:.1em}
-.index a:hover,.index a:focus-visible{color:var(--c2);-webkit-text-stroke-color:var(--c2);padding-left:1rem}
+.index a small{font:500 .8rem var(--font-mono);text-shadow:none;color:var(--muted);letter-spacing:.1em}
+.index a:hover,.index a:focus-visible{color:var(--c2);--o:var(--c2);padding-left:1rem}
 
 /* sections */
 section{padding-block:clamp(3rem,7vw,5.5rem) 0}
@@ -103,10 +103,13 @@ section{padding-block:clamp(3rem,7vw,5.5rem) 0}
 .xp{list-style:none;margin:0;padding:0;border-top:2px solid var(--fg)}
 .xp li{display:grid;grid-template-columns:8rem minmax(0,1fr) auto;gap:.3rem 1.5rem;padding-block:1.25rem;border-bottom:1px solid var(--line);align-items:center}
 .xp .y{font:500 .85rem var(--font-mono);color:var(--ink);padding:.3rem .7rem;border-radius:999px;justify-self:start}
-.xp li:nth-child(1) .y{background:var(--c1)}.xp li:nth-child(2) .y{background:var(--c2)}.xp li:nth-child(3) .y{background:var(--c3)}.xp li:nth-child(4) .y{background:var(--c4)}.xp li:nth-child(5) .y{background:var(--c5)}.xp li:nth-child(6) .y{background:var(--c6)}
+.xp li:nth-child(6n+1) .y{background:var(--c1)}.xp li:nth-child(6n+2) .y{background:var(--c2)}.xp li:nth-child(6n+3) .y{background:var(--c3)}.xp li:nth-child(6n+4) .y{background:var(--c4)}.xp li:nth-child(6n+5) .y{background:var(--c5)}.xp li:nth-child(6n) .y{background:var(--c6)}
+.xh{font:500 .85rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--c2);margin:2.5rem 0 1rem}
+.xh:first-of-type{margin-top:0}
 .xp strong{font-family:var(--font-display);font-weight:700;font-size:1.1rem;display:block;line-height:1.35}
 .xp .t{min-width:0}
 .xp .t span{color:var(--muted)}
+.xp .t strong span{color:inherit}
 .xp .t a{text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:var(--line)}
 .xp .t a:hover{text-decoration-color:var(--c2);color:var(--c2)}
 .xp .p{font:400 .8rem var(--font-mono);color:var(--muted);text-align:right}
@@ -131,7 +134,7 @@ section{padding-block:clamp(3rem,7vw,5.5rem) 0}
 /* awards */
 .aw{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:.75rem}
 .aw div{background:var(--panel);border-radius:1.25rem;padding:1.4rem;border-top:.5rem solid var(--c2)}
-.aw div:nth-child(2){border-top-color:var(--c3)}.aw div:nth-child(3){border-top-color:var(--c4)}.aw div:nth-child(4){border-top-color:var(--c5)}
+.aw div:nth-child(5n+2){border-top-color:var(--c3)}.aw div:nth-child(5n+3){border-top-color:var(--c4)}.aw div:nth-child(5n+4){border-top-color:var(--c5)}.aw div:nth-child(5n){border-top-color:var(--c6)}
 .aw .s{font:500 .75rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .aw h3{font-family:var(--font-display);font-weight:700;font-size:1.05rem;line-height:1.3;margin:.5rem 0 .6rem}
 .aw p{margin:0;color:var(--muted);font-size:.95rem}
@@ -140,6 +143,8 @@ section{padding-block:clamp(3rem,7vw,5.5rem) 0}
 .chips{display:flex;flex-wrap:wrap;gap:.6rem;margin:0;padding:0;list-style:none}
 .chips li{font-family:var(--font-display);font-weight:700;font-size:clamp(.95rem,3.2vw,1.3rem);padding:.6rem 1.2rem;border-radius:999px;color:var(--ink)}
 .chips li:nth-child(1){background:var(--c1)}.chips li:nth-child(2){background:var(--c2)}.chips li:nth-child(3){background:var(--c3)}.chips li:nth-child(4){background:var(--c4)}.chips li:nth-child(5){background:var(--c5)}.chips li:nth-child(6){background:var(--c6)}
+
+.chips.trust li{font:700 .95rem var(--font-body);background:transparent;color:var(--fg);border:2px solid var(--fg);padding:.45rem 1rem}
 
 /* accordion */
 .acc{border-top:2px solid var(--fg)}
@@ -199,10 +204,10 @@ footer{margin-top:clamp(3rem,7vw,5rem);border-top:2px solid var(--fg);padding-bl
       <p class="kicker"><span class="fr">Portfolio 2026</span><span class="en">Portfolio 2026</span></p>
       <h1 id="name" aria-label="Yohann Ghellis"><span class="w">Yohann</span><span class="w">Ghellis</span></h1>
       <p class="lede">
-        <span class="fr">Narrative designer, game designer et scénariste. Jeux vidéo, fiction TV et formats courts, du pitch à la bible de série.</span>
-        <span class="en">Narrative designer, game designer and screenwriter. Video games, TV fiction and short formats, from pitch to series bible.</span>
+        <span class="fr">Scénariste et narrative/game designer. Fiction TV, courts métrages et jeux vidéo, du pitch à la bible de série.</span>
+        <span class="en">Screenwriter and narrative/game designer. TV fiction, short films and video games, from pitch to series bible.</span>
       </p>
-      <div class="roles"><span>Narrative Designer</span><span>Game Designer</span><span><span class="fr">Scénariste</span><span class="en">Screenwriter</span></span></div>
+      <div class="roles"><span><span class="fr">Scénariste</span><span class="en">Screenwriter</span></span><span>Narrative Designer</span><span>Game Designer</span></div>
       <div class="actions">
         <a class="btn solid" href="#contact"><span class="fr">Me contacter</span><span class="en">Get in touch</span></a>
         <a class="btn" href="#projets"><span class="fr">Voir les projets</span><span class="en">See projects</span></a>
@@ -215,7 +220,7 @@ footer{margin-top:clamp(3rem,7vw,5rem);border-top:2px solid var(--fg);padding-bl
           <div class="slot"></div>
           <div class="avatar"><img src="assets/cv_img_14.jpeg" alt="" width="120" height="120"></div>
           <h2>Yohann<br>Ghellis</h2>
-          <p>Narrative · Game · Écriture<br>FR · EN (B2)</p>
+          <p>Écriture · Narrative · Game<br>FR · EN (B2)</p>
           <div class="bar"><i></i><i></i><i></i><i></i><i></i></div>
         </div>
       </div>
@@ -227,18 +232,36 @@ footer{margin-top:clamp(3rem,7vw,5rem);border-top:2px solid var(--fg);padding-bl
     <a href="#projets"><small>02</small><span class="fr">Projets</span><span class="en">Projects</span></a>
     <a href="#awards"><small>03</small>Awards</a>
     <a href="#parcours"><small>04</small><span class="fr">Parcours</span><span class="en">Background</span></a>
-    <a href="#contact"><small>05</small>Contact</a>
+    <a href="#confiance"><small>05</small><span class="fr">Références</span><span class="en">Credits</span></a>
+    <a href="#contact"><small>06</small>Contact</a>
   </nav>
 
   <section id="experiences">
-    <div class="sh"><span class="n">01</span><h2><span class="fr">Expériences game / narrative design</span><span class="en">Game / narrative design experience</span></h2></div>
+    <div class="sh"><span class="n">01</span><h2><span class="fr">Expériences</span><span class="en">Experience</span></h2></div>
+    <h3 class="xh"><span class="fr">Scénariste</span><span class="en">Screenwriter</span></h3>
     <ul class="xp">
-      <li><span class="y">2024</span><div class="t"><strong>Narrative Designer</strong><span><span class="fr">Projet non annoncé</span><span class="en">Unannounced project</span> · Artefacts Studios</span></div><span class="p">PS5, Xbox, PC</span></li>
+      <li><span class="y">2026</span><div class="t"><strong>Historical thriller</strong><span>Glaam Film</span></div><span class="p"><span class="fr">En développement</span><span class="en">In development</span></span></li>
+      <li><span class="y">2024</span><div class="t"><strong><span class="fr">Téléfilm « Meurtres à… »</span><span class="en">TV movie “Meurtres à…”</span></strong><span>Eva Production</span></div><span class="p"><span class="fr">Téléfilm</span><span class="en">TV movie</span></span></li>
+      <li><span class="y">2023</span><div class="t"><strong><span class="fr">AKI, pilote Shortcom</span><span class="en">AKI, Shortcom pilot</span></strong><span><span class="fr">GS Stories Production · Finaliste au concours Imagine TF1 · Diffusion sur TF1+</span><span class="en">GS Stories Production · Finalist, Imagine TF1 competition · Broadcast on TF1+</span></span></div><span class="p"><span class="fr">Finaliste</span><span class="en">Finalist</span></span></li>
+      <li><span class="y">2022</span><div class="t"><strong><span class="fr">Élisabeth, le premier résistant était une femme</span><span class="en">Élisabeth, the first Resistance fighter was a woman</span></strong><span><span class="fr">Sélection en compétition des moyens métrages (animation) du Festival du film de Brive</span><span class="en">Selected in the medium-length (animation) competition, Brive Film Festival</span></span></div><span class="p"><span class="fr">Sélection</span><span class="en">Selection</span></span></li>
+      <li><span class="y">2022</span><div class="t"><strong><span class="fr">AKI, court métrage</span><span class="en">AKI, short film</span></strong><span><span class="fr">Newen Productions · Finaliste au concours Meta Pitch</span><span class="en">Newen Productions · Finalist, Meta Pitch competition</span></span></div><span class="p"><span class="fr">Finaliste</span><span class="en">Finalist</span></span></li>
+      <li><span class="y">2022</span><div class="t"><strong>Treiz’exagéré</strong></div><span class="p"></span></li>
+      <li><span class="y">2022</span><div class="t"><strong>Miroir, mon beau miroir</strong><span><span class="fr">Finaliste au concours Imagine de TF1 · Diffusion sur TF1+</span><span class="en">Finalist, TF1 Imagine competition · Broadcast on TF1+</span></span></div><span class="p"><span class="fr">Finaliste</span><span class="en">Finalist</span></span></li>
+      <li><span class="y">2021</span><div class="t"><strong>The Samurai Willow</strong><span><span class="fr">Long métrage d’animation, en écriture avec le réalisateur Philippe Duchêne</span><span class="en">Animated feature film, in writing with director Philippe Duchêne</span></span></div><span class="p"><span class="fr">En écriture</span><span class="en">In writing</span></span></li>
+      <li><span class="y">2021</span><div class="t"><strong>Le Crime lui va si bien</strong><span><span class="fr">Pré-production, commande</span><span class="en">Pre-production, commissioned</span></span></div><span class="p"><span class="fr">Pré-production</span><span class="en">Pre-production</span></span></li>
+      <li><span class="y">2019</span><div class="t"><strong>Poker Battle (VR/360°)</strong><span><span class="fr">Sélection en compétition des courts métrages VR/360° du festival organisé par Satis-Screen4all</span><span class="en">Selected in the VR/360° short film competition, festival organised by Satis-Screen4all</span></span></div><span class="p"><span class="fr">Sélection</span><span class="en">Selection</span></span></li>
+      <li><span class="y">2018</span><div class="t"><strong><span class="fr">Court métrage de sensibilisation aux aidants de personnes atteintes de la maladie d’Alzheimer</span><span class="en">Awareness short film for carers of people with Alzheimer’s disease</span></strong><span>Prod8</span></div><span class="p"><span class="fr">Court métrage</span><span class="en">Short film</span></span></li>
+      <li><span class="y">2018</span><div class="t"><strong>Demain à l’aube</strong><span><span class="fr">Court métrage · Prod8 · France 2 · Lauréat du concours du Téléthon du cinéma, Prix du meilleur film</span><span class="en">Short film · Prod8 · France 2 · Winner of the Téléthon du cinéma competition, Best Film Award</span></span></div><span class="p"><span class="fr">Lauréat</span><span class="en">Winner</span></span></li>
+    </ul>
+    <h3 class="xh"><span class="fr">Game / Narrative designer</span><span class="en">Game / Narrative designer</span></h3>
+    <ul class="xp">
+      <li><span class="y">2026</span><div class="t"><strong>Narrative Designer</strong><span>Paper Shredder · Embers Studios</span></div><span class="p">PS5, Xbox, PC</span></li>
+      <li><span class="y">2024</span><div class="t"><strong>Narrative Designer</strong><span>MXGP 2024 · Artefacts Studios</span></div><span class="p">PS5, Xbox, PC</span></li>
       <li><span class="y">2022</span><div class="t"><strong>Game / Narrative Designer</strong><span><a href="https://www.sandbox.game/en/" target="_blank" rel="noopener">The Sandbox</a></span></div><span class="p">PC</span></li>
       <li><span class="y">2022</span><div class="t"><strong>Narrative Designer</strong><span><a href="https://store.steampowered.com/app/1605220/Dune_Spice_Wars/?l=french" target="_blank" rel="noopener">Dune: Spice Wars</a> · Shiro Games</span></div><span class="p">PC</span></li>
       <li><span class="y">2021</span><div class="t"><strong>Game / Narrative Designer</strong><span><span class="fr">Projet non annoncé</span><span class="en">Unannounced project</span> · Tap4Fun Paris</span></div><span class="p">F2P mobile</span></li>
       <li><span class="y">2019-2021</span><div class="t"><strong>Game Designer / Narrative Designer</strong><span><a href="https://apps.apple.com/us/app/love-star-choices-story/id1533578468" target="_blank" rel="noopener">Love Stars</a> · Pocket Story</span></div><span class="p">F2P mobile</span></li>
-      <li><span class="y">2018-2021</span><div class="t"><strong>Narrative Designer (Game Jams)</strong><span><span class="fr">Projets narratifs en 48h :</span><span class="en">48-hour narrative projects:</span> <a href="https://v3.globalgamejam.org/2021/games/conquistador-0" target="_blank" rel="noopener">Conquistador</a>, <a href="https://globalgamejam.org/2019/games/spaceimmo" target="_blank" rel="noopener">Space Immo</a>, <a href="https://www.utopialesgamejam.com/ugj-2017/" target="_blank" rel="noopener">Utopiales Game Jam</a></span></div><span class="p">Game jam</span></li>
+      <li><span class="y">2018-2021</span><div class="t"><strong>Game Jams</strong><span><span class="fr">Scénario et dialogues créés en 48 heures :</span><span class="en">Script and dialogue written in 48 hours:</span> <a href="https://v3.globalgamejam.org/2021/games/conquistador-0" target="_blank" rel="noopener">Conquista d’Or</a>, <a href="https://globalgamejam.org/2019/games/spaceimmo" target="_blank" rel="noopener">Space Immo</a>, Global Game Jam, <a href="https://www.utopialesgamejam.com/ugj-2017/" target="_blank" rel="noopener">Game Jam des Utopiales de Nantes</a></span></div><span class="p">Game jam</span></li>
     </ul>
   </section>
 
@@ -301,10 +324,13 @@ footer{margin-top:clamp(3rem,7vw,5rem);border-top:2px solid var(--fg);padding-bl
   <section id="awards">
     <div class="sh"><span class="n">03</span><h2>Awards</h2></div>
     <div class="aw">
-      <div><span class="s"><span class="fr">Sélection</span><span class="en">Selection</span></span><h3>Elisabeth de Miribel</h3><p><span class="fr">Sélection au concours moyen métrage (animation) du Festival de Brive.</span><span class="en">Selected for the medium-length (animation) competition at the Brive Festival.</span></p></div>
-      <div><span class="s"><span class="fr">Sélection</span><span class="en">Selection</span></span><h3>AKI Pilot Production</h3><p><span class="fr">Sélection au concours Imagine, TF1.</span><span class="en">Selected for the Imagine competition, TF1.</span></p></div>
-      <div><span class="s"><span class="fr">Finaliste</span><span class="en">Finalist</span></span><h3><span class="fr">Le silence est une preuve d’amour</span><span class="en">Silence Is a Proof of Love</span></h3><p><span class="fr">Finaliste d’un concours d’écriture audiovisuelle.</span><span class="en">Finalist in an audiovisual writing competition.</span></p></div>
-      <div><span class="s"><span class="fr">Sélection</span><span class="en">Selection</span></span><h3>Poker Battle (VR/360°)</h3><p><span class="fr">Sélection au Festival 360 Film (Satis-Screen4all).</span><span class="en">Selected at the 360 Film Festival (Satis-Screen4all).</span></p></div>
+      <div><span class="s"><span class="fr">Lauréat</span><span class="en">Winner</span></span><h3>Demain à l’aube</h3><p><span class="fr">Prix du meilleur film au concours du Téléthon du cinéma (Prod8, France 2).</span><span class="en">Best Film Award, Téléthon du cinéma competition (Prod8, France 2).</span></p></div>
+      <div><span class="s"><span class="fr">Finaliste</span><span class="en">Finalist</span></span><h3><span class="fr">AKI, pilote Shortcom</span><span class="en">AKI, Shortcom pilot</span></h3><p><span class="fr">Concours Imagine TF1. Diffusion sur TF1+.</span><span class="en">Imagine TF1 competition. Broadcast on TF1+.</span></p></div>
+      <div><span class="s"><span class="fr">Finaliste</span><span class="en">Finalist</span></span><h3>Miroir, mon beau miroir</h3><p><span class="fr">Concours Imagine TF1. Diffusion sur TF1+.</span><span class="en">Imagine TF1 competition. Broadcast on TF1+.</span></p></div>
+      <div><span class="s"><span class="fr">Finaliste</span><span class="en">Finalist</span></span><h3><span class="fr">AKI, court métrage</span><span class="en">AKI, short film</span></h3><p><span class="fr">Concours Meta Pitch (Newen Productions).</span><span class="en">Meta Pitch competition (Newen Productions).</span></p></div>
+      <div><span class="s"><span class="fr">Sélection</span><span class="en">Selection</span></span><h3>Élisabeth de Miribel</h3><p><span class="fr">Compétition des moyens métrages (animation) du Festival du film de Brive.</span><span class="en">Medium-length (animation) competition, Brive Film Festival.</span></p></div>
+      <div><span class="s"><span class="fr">Sélection</span><span class="en">Selection</span></span><h3>Poker Battle (VR/360°)</h3><p><span class="fr">Compétition VR/360° du festival organisé par Satis-Screen4all.</span><span class="en">VR/360° competition, festival organised by Satis-Screen4all.</span></p></div>
+      <div><span class="s"><span class="fr">Finaliste</span><span class="en">Finalist</span></span><h3><span class="fr">Le silence est une preuve d’amour</span><span class="en">Silence Is a Proof of Love</span></h3><p><span class="fr">Concours d’écriture audiovisuelle.</span><span class="en">Audiovisual writing competition.</span></p></div>
     </div>
   </section>
 
@@ -317,26 +343,49 @@ footer{margin-top:clamp(3rem,7vw,5rem);border-top:2px solid var(--fg);padding-bl
       <details open>
         <summary><span class="fr">Enseignement</span><span class="en">Teaching</span></summary>
         <ul>
-          <li><span class="fr">Intervenant à ISART Digital (depuis 2024)</span><span class="en">Guest lecturer at ISART Digital (since 2024)</span></li>
-          <li><span class="fr">Formateur en Narrative Design (Artwork-VFx)</span><span class="en">Narrative Design trainer (Artwork-VFx)</span></li>
-          <li><span class="fr">Professeur en Narrative Design / Scénario (Brassart)</span><span class="en">Narrative Design / Screenwriting teacher (Brassart)</span></li>
+          <li><span class="fr">Depuis 2024 : intervenant à la formation ISART Digital sur la conception narrative</span><span class="en">Since 2024: guest lecturer on narrative design at ISART Digital</span></li>
+          <li><span class="fr">Depuis 2024 : enseignant en conception narrative et écriture de scénario à l’école Brassart (Paris)</span><span class="en">Since 2024: teacher of narrative design and screenwriting at Brassart school (Paris)</span></li>
+          <li><span class="fr">2023 : formateur en narrative design chez Artwork-VFx</span><span class="en">2023: narrative design trainer at Artwork-VFx</span></li>
         </ul>
       </details>
       <details>
         <summary><span class="fr">Formations</span><span class="en">Training</span></summary>
         <ul>
+          <li><span class="fr">Fémis : écriture d’une bible dans le cadre de la création d’une série</span><span class="en">Fémis: writing a bible for the creation of a series</span></li>
+          <li><span class="fr">CEEA : construction d’un épisode d’une série policière</span><span class="en">CEEA: structuring an episode of a crime series</span></li>
+          <li><span class="fr">Atelier « Dialoguer une quotidienne » (Guillaume Desouhant)</span><span class="en">Workshop “Writing dialogue for a daily series” (Guillaume Desouhant)</span></li>
+          <li><span class="fr">Séries télévisées : la révolution narrative (Nicola Lusuardi)</span><span class="en">TV series: the narrative revolution (Nicola Lusuardi)</span></li>
+          <li><span class="fr">Créer une bible de série (Denis Lima)</span><span class="en">Creating a series bible (Denis Lima)</span></li>
+          <li><span class="fr">Écrire une bible pour une série TV d’animation adaptée d’une BD</span><span class="en">Writing a bible for an animated TV series adapted from a comic</span></li>
           <li><span class="fr">Udemy : Unreal Engine 5 / Blueprint ; UI/UX Design</span><span class="en">Udemy: Unreal Engine 5 / Blueprint; UI/UX Design</span></li>
-          <li><span class="fr">Fémis : création d’une bible dans le cadre d’une série</span><span class="en">Fémis: building a series bible</span></li>
-          <li><span class="fr">CEEA : construction d’un épisode de série policière</span><span class="en">CEEA: structuring a crime series episode</span></li>
-          <li><span class="fr">Séries TV : La révolution narrative (Nicola Lusuardi)</span><span class="en">TV series: The narrative revolution (Nicola Lusuardi)</span></li>
-          <li><span class="fr">Rédaction d’une bible pour une série animée adaptée d’une BD</span><span class="en">Writing a bible for an animated series adapted from a comic</span></li>
         </ul>
       </details>
     </div>
   </section>
 
+  <section id="confiance">
+    <div class="sh"><span class="n">05</span><h2><span class="fr">Ils m’ont fait confiance</span><span class="en">They trusted me</span></h2></div>
+    <ul class="chips trust">
+      <li>France 2</li>
+      <li>Les Schtroumpfs</li>
+      <li>Les Lapins Crétins</li>
+      <li>Le Petit Prince</li>
+      <li>The Walking Dead</li>
+      <li>Hellboy</li>
+      <li>Lionsgate</li>
+      <li>Original Stormtrooper</li>
+      <li>Warner Music Group</li>
+      <li>ISART Digital</li>
+      <li>tap4fun</li>
+      <li>Shiro Games</li>
+      <li>Artefacts Studio</li>
+      <li>The Sandbox</li>
+      <li>Nuclear Blast Records</li>
+    </ul>
+  </section>
+
   <section id="contact">
-    <div class="sh"><span class="n">05</span><h2>Contact</h2></div>
+    <div class="sh"><span class="n">06</span><h2>Contact</h2></div>
     <div class="ct">
       <div class="box">
         <h3>Email</h3>
